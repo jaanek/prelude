@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jx:attr>...</jx:attr>
+# key: jxattr
+# --
+<jx:attr jx:if="$1"/>

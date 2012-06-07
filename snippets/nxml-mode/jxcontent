@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jx:content>...</jx:content>
+# key: jxcontent
+# --
+<jx:content xmlns:jx="http://www.jawex.org/jxat" xmlns:i18n="http://www.jawex.org/i18n">
+  $1
+</jx:content>

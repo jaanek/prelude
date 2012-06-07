@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxfor>...</jxfor>
+# key: jxfor
+# --
+<jx:for init="var i = ..." condition="i < ..." post="i++">
+  $1
+</jx:for>

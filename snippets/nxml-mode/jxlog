@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxlog>...</jxlog>
+# key: jxlog
+# --
+<jx:log value="$1"/>

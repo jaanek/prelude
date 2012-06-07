@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxif>...</jxif>
+# key: jxif
+# --
+<jx:if condition="var">
+  $1
+</jx:if>

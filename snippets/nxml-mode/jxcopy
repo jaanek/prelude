@@ -1,0 +1,6 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxcopy>...</jxcopy>
+# key: jxcopy
+# --
+<jx:copy name="$1">
+</jx:copy>

@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jx:script type="text/javascript">...</jx:script>
+# key: jxscript
+# --
+<jx:script type="text/javascript">
+  $1
+</jx:script>

@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxjsgroup>...</jxjsgroup>
+# key: jxjsgroup
+# --
+<jx:js-group>
+  <jx:js src="$1"/>
+</jx:js-group>

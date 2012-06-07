@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxpaste>...</i18n>
+# key: jxpaste
+# --
+<jx:paste name="$1"/>

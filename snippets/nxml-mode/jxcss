@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxcss>...</jxcss>
+# key: jxcss
+# --
+<jx:css src="$1" />

@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxtree>...</jxtree>
+# key: jxtree
+# --
+<jx:tree js:value="$1entry.getBodyHtml()" />

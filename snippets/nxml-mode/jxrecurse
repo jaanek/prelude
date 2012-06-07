@@ -1,0 +1,11 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxrecurse>...</jxrecurse>
+# key: jxrecurse
+# --
+<jx:recurse p:data="cats" vars="i,k,cat" next="cat" root="false">
+  <jx:hasnext>
+    ...$1
+     <jx:next/>
+    ...
+  </jx:hasnext>
+</jx:recurse>

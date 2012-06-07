@@ -1,0 +1,11 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxifel>...</jxifel>
+# key: jxifel
+# --
+<jx:if condition="var">
+  $1
+</jx:if>
+<jx:elseif condition="var">
+</jx:elseif>
+<jx:else>
+</jx:else>

@@ -1,0 +1,9 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <dependency>...</dependency>
+# key: dependency
+# --
+<dependency>
+  <groupId>$1</groupId>
+  <artifactId></artifactId>
+  <version></version>
+</dependency>

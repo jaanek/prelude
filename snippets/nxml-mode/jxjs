@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxjs>...</jxjs>
+# key: jxjs
+# --
+<jx:js src="$1"/>

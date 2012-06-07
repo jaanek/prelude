@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxerror>...</i18n>
+# key: jxerror
+# --
+<jx:error field="fn">
+  $1
+</jx:error>

@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxswitch>...</jxswitch>
+# key: jxswitch
+# --
+<jx:switch js:value="$1">
+  <jx:case js:value=""></jx:case>
+</jx:switch>

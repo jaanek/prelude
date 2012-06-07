@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxinclude>...</jxinclude>
+# key: jxinclude
+# --
+<jx:include name="$1"/>

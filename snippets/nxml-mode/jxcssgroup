@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxcssgroup>...</jxcssgroup>
+# key: jxcssgroup
+# --
+<jx:css-group media="all">
+  <jx:css src="$1" media="all" />
+</jx:css-group>

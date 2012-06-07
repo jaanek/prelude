@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxfore>...</jxfore>
+# key: jxfore
+# --
+<jx:foreach js:data="array_coll_map" vars="idx,key,val">
+  $1
+</jx:foreach>
