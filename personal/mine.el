@@ -183,3 +183,14 @@
   ;; If there is more than one, they won't work right.
  )
 
+;; Disable newlines that are inserted after snippets
+;; http://stackoverflow.com/questions/7619640/emacs-latex-yasnippet-why-are-newlines-inserted-after-a-snippet
+;;(setq-default require-final-newline nil)
+;; ensure we do this *after* default.el is loaded!
+;;(add-hook ‘after-init-hook
+;;‘(lambda ()
+;;(setq require-final-newline nil)))
+;;(setq-default mode-require-final-newline nil)
+(add-hook 'nxhtml-mumamo-mode-hook '(lambda ()
+                           (setq require-final-newline nil)
+                           (setq mode-require-final-newline nil)))
