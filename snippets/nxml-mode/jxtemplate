@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxtemplate>...</jxtemplate>
+# key: jxtemplate
+# --
+<jx:template name="$1" extends="<template-name>" | src="src/name">
+  
+</jx:template>

@@ -2,6 +2,6 @@
 # name: <jxfor>...</jxfor>
 # key: jxfor
 # --
-<jx:for init="var i = ..." condition="i < ..." post="i++">
+<jx:for init="var i = " condition="i " post="i++">
   $1
 </jx:for>

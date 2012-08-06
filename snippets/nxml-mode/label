@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <label type="text/javalabel">...</label>
+# key: label
+# --
+<label for="">$1</label>

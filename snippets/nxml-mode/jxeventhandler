@@ -1,0 +1,8 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxeventhandler>...</jxeventhandler>
+# key: jxeventhandler
+# --
+<event-handler name="product-handler" class="com.shoppa.modules.handlers.ProductHandler">
+    <event name="p" id="1"  lang="et" secure="false" />
+    $1
+</event-handler>

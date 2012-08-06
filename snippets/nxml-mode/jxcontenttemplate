@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxcontent>...</jxcontent>
+# key: jxcontent
+# --
+<jx:content name="cms-content"  src="cms/page" />

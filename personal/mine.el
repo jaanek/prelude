@@ -22,15 +22,6 @@
 (add-hook 'prog-mode-hook 'prelude-turn-off-whitespace t)
 (flyspell-mode 0)
 
-;;
-(defun nxml-pretty-format ()
-    (interactive)
-    (save-excursion
-        (shell-command-on-region (point-min) (point-max) "xmllint --format -" (buffer-name) t)
-        (nxml-mode)
-        (indent-region begin end)))
-
-
 ;; uniq-lines
 ;; ----------
 ;; This is something of a companion to the built-in sort-lines function.
@@ -100,19 +91,54 @@
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
+;;-----------------------------------------------------------------------------
+;; settings related to viewing and editing
+
 ;; Font size
 ;; The value is in 1/10pt, so 100 will give you 10pt, etc. 
 ;; http://www.emacswiki.org/emacs/SetFonts. `C-x C-+’ and ‘C-x C--’ to increase or decrease the buffer text size
 (set-face-attribute 'default nil :height 120)
 
+;; set default paragraph (line) fill width. http://www.dpawson.co.uk/relaxng/nxml/nxmlGeneral.html#d357e516
+(setq-default fill-column 860) ;; this will guarantee that line is not wrapped if column width goes big
+
+;; Show matching parenthesis
+(show-paren-mode 1)
 
 ;; tabs to spaces
 (setq-default indent-tabs-mode nil)
 (setq c-basic-offset 4)
 (setq tab-width 8)
 
-;;; turn on syntax hilighting
+;;; turn on syntax highlighting
 (global-font-lock-mode 1)
+
+;;-----------------------------------------------------------------------------
+;; settings related to appearance
+
+;; No menu, no scrollbar
+(menu-bar-mode 0)
+(if (commandp 'scroll-bar-mode)
+    (scroll-bar-mode -1))
+(if (commandp 'tool-bar-mode)
+    (tool-bar-mode 0))
+
+
+;;-----------------------------------------------------------------------------
+;; settings related to behaviour other than editing
+
+;; Scroll one line at a time, not in blocks
+(setq scroll-conservatively 1)
+
+;; Never beep
+(setq ring-bell-function '(lambda () (interactive)))
+
+;; Superboost C-x b
+(iswitchb-mode t)
+
+;; Stop forcing me to spell out "yes"
+(fset 'yes-or-no-p 'y-or-n-p)
+
 
 ;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
 (autoload 'groovy-mode "groovy-mode" "Groovy editing mode." t)
@@ -120,7 +146,7 @@
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
 ;; javascript mode - http://stackoverflow.com/questions/4177929/how-to-change-the-indentation-width-in-emacs-javascript-mode
-(setq js-indent-level 2)
+(setq js-indent-level 4)
 
 ;; nxhtml module
 (load "~/.emacs.d/personal/nxhtml/autostart.el")
@@ -128,20 +154,8 @@
 ;; load the tabkey2 module
 (load "~/.emacs.d/personal/tabkey2/tabkey2.el")
 
-;; nxml
-;;;###autoload
-(progn
- (push '("<\\?xml" . nxml-mode) magic-mode-alist)
-
- ;; pom files should be treated as xml files
- (add-to-list 'auto-mode-alist '("\\.pom$" . nxml-mode))
-
- (setq nxml-child-indent 2)
- (setq nxml-attribute-indent 2)
- (setq nxml-auto-insert-xml-declaration-flag nil)
- (setq nxml-bind-meta-tab-to-complete-flag t)
- (setq nxml-slash-auto-complete-flag t))
-
+;; load nxml custom settings
+(load "~/.emacs.d/personal/nxml-custom-settings.el")
 
 ;; load the zencoding mode. Easy html generation. http://www.emacswiki.org/emacs/ZenCoding
 (add-to-list 'load-path "~/.emacs.d/personal/zencoding/")
@@ -194,3 +208,22 @@
 (add-hook 'nxhtml-mumamo-mode-hook '(lambda ()
                            (setq require-final-newline nil)
                            (setq mode-require-final-newline nil)))
+;; do not wrap lines. http://office.alendro.com/display/devel/Turn+off+automatic+line+wrap
+(add-hook 'text-mode-hook 
+          (lambda () (auto-fill-mode -1)))
+
+;; No line breaks after a tag. http://www.emacswiki.org/emacs/HtmlMode#toc3
+;;(unless (fboundp 'sgml-fill-nobreak)
+;;  ;; from the emacs cvs head
+;;  (defun sgml-fill-nobreak ()
+;;    ;; Don't break between a tag name and its first argument.
+;;    (save-excursion
+;;      (skip-chars-backward " \t")
+;;      (and (not (zerop (skip-syntax-backward "w_")))
+;;           (skip-chars-backward "/?!")
+;;           (eq (char-before) ?<))))
+;;
+;;  (add-hook 'sgml-mode-hook
+;;            (lambda ()
+;;              (set (make-local-variable 'fill-nobreak-predicate)
+;;                   'sgml-fill-nobreak))))
