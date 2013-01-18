@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxelse>...</jxelse>
+# key: jxelse
+# --
+<jx:else>
+  $1
+</jx:else>

@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <script src="" type="text/javascript"></script>
+# key: scriptlink
+# --
+<script src="$1" type="text/javascript"></script>

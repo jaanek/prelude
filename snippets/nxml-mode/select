@@ -1,0 +1,7 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <select>...</select>
+# key: select
+# --
+<select id="" name="">
+  $1
+</select>

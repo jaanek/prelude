@@ -7,6 +7,16 @@
 
 (global-set-key "\M-g" 'goto-line)
 
+;; Comment and Uncomment regions
+(global-unset-key "\C-c\C-c")
+(global-set-key  "\C-c\C-c" 'comment-region)
+;; shortcut for uncomment region
+(global-unset-key "\C-c\C-u")
+(global-set-key "\C-c\C-u" 'uncomment-region)
+
+;; indent region
+(global-set-key (kbd "C-x i") 'indent-region)
+
 ;;
 ;;https://sites.google.com/site/steveyegge2/effective-emacs
 ;;
@@ -21,6 +31,10 @@
 ;; Disable flyspell-mode and whitespace-mode -  https://github.com/bbatsov/prelude/issues/52
 (add-hook 'prog-mode-hook 'prelude-turn-off-whitespace t)
 (flyspell-mode 0)
+
+;; join columns
+(defun join-lines () (interactive) (let ((fill-column 999999)) (fill-paragraph nil)))
+(global-set-key (kbd "C-x j") 'join-lines)
 
 ;; uniq-lines
 ;; ----------
@@ -169,9 +183,6 @@
 ;;(yas/initialize)
 ;;(yas/load-directory "~/.emacs.d/personal/yasnippet/0.6.1c/snippets")
 
-
-;; indent region
-(global-set-key (kbd "C-x i") 'indent-region)
 
 ;; next compilation error
 (global-set-key (kbd "C-x c") 'mvn)

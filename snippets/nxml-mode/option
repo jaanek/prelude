@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <option>...</option>
+# key: option
+# --
+<option value="">$1</option>
