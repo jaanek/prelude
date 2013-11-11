@@ -2,4 +2,4 @@
 # name: <jxdate>...</jxdate>
 # key: jxdate
 # --
-<jx:date type="medium">{{usr.getCreatedDate()}}</jx:date>
+<jx:date type="medium" js:value="usr.getCreatedDate()">{{usr.getCreatedDate()}}</jx:date>

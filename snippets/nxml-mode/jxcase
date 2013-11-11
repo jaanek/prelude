@@ -1,0 +1,5 @@
+# contributor: Jaanek Oja <jaanek@shoppa.ee>
+# name: <jxcase>...</jxcase>
+# key: jxcase
+# --
+<jx:case js:value="$1"></jx:case>
