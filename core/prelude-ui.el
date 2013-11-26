@@ -1,9 +1,9 @@
 ;;; prelude-ui.el --- Emacs Prelude: UI optimizations and tweaks.
 ;;
-;; Copyright (c) 2011-2012 Bozhidar Batsov
+;; Copyright © 2011-2013 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
-;; URL: http://batsov.com/emacs-prelude
+;; URL: https://github.com/bbatsov/prelude
 ;; Version: 1.0.0
 ;; Keywords: convenience
 
@@ -38,21 +38,8 @@
 ;; already disabled anyway
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
-;; the menu bar is mostly useless as well
-;; but removing it under OS X doesn't make much sense
-(defun prelude-frame-config (frame)
-  "Custom behaviours for new frames."
-  (if (eq system-type 'darwin)
-      (with-selected-frame frame
-        (if (display-graphic-p)
-            (modify-frame-parameters frame '((menu-bar-lines . 1)))
-          (modify-frame-parameters frame '((menu-bar-lines . 0)))))
-    (menu-bar-mode -1)))
 
-;; run now
-(prelude-frame-config (selected-frame))
-;; and later
-(add-hook 'after-make-frame-functions 'prelude-frame-config)
+(menu-bar-mode -1)
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
