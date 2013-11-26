@@ -7,6 +7,9 @@
 
 (global-set-key "\M-g" 'goto-line)
 
+;; Enable helm mode (eg. advanced buffer switching etc.): https://github.com/emacs-helm/helm
+(helm-mode 1)
+
 ;; Disable Guru mode (eg. enable UP, Down ... keys): https://github.com/bbatsov/prelude/issues/275
 (setq prelude-guru nil)
 
@@ -157,6 +160,7 @@
 
 ;; Superboost C-x b
 (iswitchb-mode t)
+(iswitchb-mode 1)
 
 ;; Stop forcing me to spell out "yes"
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -240,3 +244,18 @@
 ;;            (lambda ()
 ;;              (set (make-local-variable 'fill-nobreak-predicate)
 ;;                   'sgml-fill-nobreak))))
+
+;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
+(add-to-list 'load-path "~/.emacs.d/personal/groovy")
+(require 'groovy-mode)
+(autoload 'groovy-mode "groovy-mode" "Major mode for editing Groovy code." t)
+(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
+(add-to-list 'auto-mode-alist '("\.gradle$" . groovy-mode))
+(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
+(add-to-list 'interpreter-mode-alist '("gradle" . groovy-mode))
+
+;;; make Groovy mode electric by default.
+(add-hook 'groovy-mode-hook
+          '(lambda ()
+             (require 'groovy-electric)
+             (groovy-electric-mode)))

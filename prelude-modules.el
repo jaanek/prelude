@@ -9,7 +9,7 @@
 (require 'prelude-erc)
 ;; (require 'prelude-erlang)
 ;; (require 'prelude-haskell)
-;; (require 'prelude-helm)
+(require 'prelude-helm)
 (require 'prelude-js)
 ;; (require 'prelude-key-chord)
 ;; (require 'prelude-latex)
