@@ -33,8 +33,8 @@
 ;;(load-theme 'solarized-dark t)
 
 ;; Disable flyspell-mode and whitespace-mode -  https://github.com/bbatsov/prelude/issues/52
-(add-hook 'prog-mode-hook 'prelude-turn-off-whitespace t)
-(flyspell-mode 0)
+;;(add-hook 'prog-mode-hook 'prelude-turn-off-whitespace t)
+;;(flyspell-mode 0)
 
 ;; join columns
 (defun join-lines () (interactive) (let ((fill-column 999999)) (fill-paragraph nil)))
