@@ -7,6 +7,12 @@
 
 (global-set-key "\M-g" 'goto-line)
 
+;; Enable solarized theme (light or dark): https://github.com/sellout/emacs-color-theme-solarized
+;;(load-theme 'solarized-[light|dark] t)
+(disable-theme 'zenburn)
+(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-dark t)
+
 ;; enable whitespace mode globally - http://stackoverflow.com/questions/8036576/how-to-get-whitespace-mode-enabled-only-for-certain-modes
 (require 'whitespace)
 (global-whitespace-mode t)
@@ -27,10 +33,6 @@
 ;; Item 2: Invoke M-x without the Alt key
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
-
-;; theme
-(disable-theme 'zenburn)
-;;(load-theme 'solarized-dark t)
 
 ;; Disable flyspell-mode and whitespace-mode -  https://github.com/bbatsov/prelude/issues/52
 ;;(add-hook 'prog-mode-hook 'prelude-turn-off-whitespace t)
@@ -156,38 +158,6 @@
 
 ;; Stop forcing me to spell out "yes"
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;; xah-elisp-mode: http://ergoemacs.org/emacs/xah-elisp-mode.html
-;;(add-to-list 'load-path "~/.emacs.d/personal/xah-elisp-mode")
-;;(require 'xah-elisp-mode)
-;;(add-to-list 'auto-mode-alist '("\.el$" . xah-elisp-mode))
-
-;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
-;; load the groovy mode. https://github.com/jaanek/Emacs-Groovy-Mode
-(add-to-list 'load-path "~/.emacs.d/personal/groovy")
-(autoload 'groovy-mode "groovy-mode" "Groovy editing mode." t)
-(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
-(add-to-list 'auto-mode-alist '("\.gradle$" . groovy-mode))
-(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
-(add-to-list 'interpreter-mode-alist '("gradle" . groovy-mode))
-;;; make Groovy mode electric by default.
-(add-hook 'groovy-mode-hook
-          '(lambda ()
-             (require 'groovy-electric)
-             (groovy-electric-mode)))
-
-;; web-mode: http://web-mode.org/
-(add-to-list 'load-path "~/.emacs.d/personal/web-mode")
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-;; Using web-mode for editing plain HTML files can be done this way
-;;(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 ;; javascript mode - http://stackoverflow.com/questions/4177929/how-to-change-the-indentation-width-in-emacs-javascript-mode
 (setq js-indent-level 4)
