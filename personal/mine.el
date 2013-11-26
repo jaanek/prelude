@@ -157,6 +157,10 @@
 ;; Stop forcing me to spell out "yes"
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; xah-elisp-mode: http://ergoemacs.org/emacs/xah-elisp-mode.html
+;;(add-to-list 'load-path "~/.emacs.d/personal/xah-elisp-mode")
+;;(require 'xah-elisp-mode)
+;;(add-to-list 'auto-mode-alist '("\.el$" . xah-elisp-mode))
 
 ;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
 ;; load the groovy mode. https://github.com/jaanek/Emacs-Groovy-Mode
