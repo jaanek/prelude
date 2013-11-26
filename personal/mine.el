@@ -7,6 +7,10 @@
 
 (global-set-key "\M-g" 'goto-line)
 
+;; enable whitespace mode globally - http://stackoverflow.com/questions/8036576/how-to-get-whitespace-mode-enabled-only-for-certain-modes
+(require 'whitespace)
+(global-whitespace-mode t)
+
 ;; Comment and Uncomment regions
 (global-unset-key "\C-c\C-c")
 (global-set-key  "\C-c\C-c" 'comment-region)
@@ -155,9 +159,13 @@
 
 
 ;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
+;; load the groovy mode. https://github.com/jaanek/Emacs-Groovy-Mode
+(add-to-list 'load-path "~/.emacs.d/personal/groovy")
 (autoload 'groovy-mode "groovy-mode" "Groovy editing mode." t)
 (add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
+(add-to-list 'auto-mode-alist '("\.gradle$" . groovy-mode))
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
+(add-to-list 'interpreter-mode-alist '("gradle" . groovy-mode))
 
 ;; javascript mode - http://stackoverflow.com/questions/4177929/how-to-change-the-indentation-width-in-emacs-javascript-mode
 (setq js-indent-level 4)
