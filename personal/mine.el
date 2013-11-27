@@ -10,13 +10,16 @@
 ;; Enable helm mode (eg. advanced buffer switching etc.): https://github.com/emacs-helm/helm
 (helm-mode 1)
 
+;; disable on the fly spell checking
+(setq prelude-flyspell nil)
+
 ;; Disable Guru mode (eg. enable UP, Down ... keys): https://github.com/bbatsov/prelude/issues/275
 (setq prelude-guru nil)
 
 ;; Enable solarized theme (light or dark): https://github.com/sellout/emacs-color-theme-solarized
 ;;(load-theme 'solarized-[light|dark] t)
 (disable-theme 'zenburn)
-(load-theme 'solarized-dark t)
+(load-theme 'solarized-light t)
 
 ;; enable whitespace mode globally - http://stackoverflow.com/questions/8036576/how-to-get-whitespace-mode-enabled-only-for-certain-modes
 (require 'whitespace)
