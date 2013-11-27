@@ -248,6 +248,27 @@
 ;;              (set (make-local-variable 'fill-nobreak-predicate)
 ;;                   'sgml-fill-nobreak))))
 
+;; Workaround the mumamo annoying warnings
+;; Mumamo is making emacs 24 freak out on obsolete variables in nxhtml:
+(when (and (equal emacs-major-version 24))
+  (eval-after-load "bytecomp"
+    '(add-to-list 'byte-compile-not-obsolete-vars
+                  'font-lock-beginning-of-syntax-function))
+  (eval-after-load "bytecomp"
+    '(add-to-list 'byte-compile-not-obsolete-vars
+                  'font-lock-syntactic-keywords))
+  ;; tramp-compat.el clobbers this variable!
+  (eval-after-load "tramp-compat"
+    '(add-to-list 'byte-compile-not-obsolete-vars
+                  'font-lock-beginning-of-syntax-function))
+  (eval-after-load "tramp-compat"
+    '(add-to-list 'byte-compile-not-obsolete-vars
+                  'font-lock-syntactic-keywords))
+  (eval-after-load "mumamo"
+    '(setq mumamo-per-buffer-local-vars
+           (delq 'buffer-file-name mumamo-per-buffer-local-vars)))
+  )
+
 ;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
 (add-to-list 'load-path "~/.emacs.d/personal/groovy")
 (require 'groovy-mode)
