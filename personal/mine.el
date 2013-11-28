@@ -24,6 +24,8 @@
 ;; enable whitespace mode globally - http://stackoverflow.com/questions/8036576/how-to-get-whitespace-mode-enabled-only-for-certain-modes
 (require 'whitespace)
 (global-whitespace-mode t)
+(setq whitespace-line-column 120) ;; limit line length
+(setq whitespace-style '(face tabs empty trailing lines-tail))
 
 ;; Comment and Uncomment regions
 (global-unset-key "\C-c\C-c")
