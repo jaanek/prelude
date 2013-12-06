@@ -1,3 +1,5 @@
+;; Try M-x describe-key and then C-S up will provide a short description to the function bound to C-S up.
+
 (global-set-key [up] 'previous-line)
 (global-set-key [down] 'next-line)
 (global-set-key [left] 'backward-char)
@@ -6,6 +8,24 @@
 (global-set-key [M-left] 'left-word)
 
 (global-set-key "\M-g" 'goto-line)
+
+;; smartparens
+;; http://stackoverflow.com/questions/20318128/emacs-prelude-smartparens-and-osx
+;; http://stackoverflow.com/questions/18420933/enabling-mode-specific-paren-indentation-in-emacs-prelude
+;; ("C-<right>" . sp-forward-slurp-sexp)
+;; Remap it
+;;(global-set-key [(control right)] 'forward-word)
+;;(global-set-key [(control shift right)] 'sp-forward-slurp-sexp)
+;; --------------------------------------------------------
+;; override the smartparens keys in smartparens config map
+(require 'smartparens-config)
+(define-key sp-keymap (kbd "C-<right>") 'forward-word)
+(define-key sp-keymap (kbd "C-<left>") 'backward-word)
+(define-key sp-keymap (kbd "C-S-<right>") 'sp-forward-slurp-sexp)
+(define-key sp-keymap (kbd "C-S-<left>") 'sp-forward-barf-sexp)
+(define-key sp-keymap (kbd "C-M-<left>") 'sp-backward-slurp-sexp)
+(define-key sp-keymap (kbd "C-M-<right>") 'sp-backward-barf-sexp)
+;; --------------------------------------------------------
 
 ;; Enable helm mode (eg. advanced buffer switching etc.): https://github.com/emacs-helm/helm
 (helm-mode 1)
