@@ -18,6 +18,7 @@
 ;;(global-set-key [(control shift right)] 'sp-forward-slurp-sexp)
 ;; --------------------------------------------------------
 ;; override the smartparens keys in smartparens config map
+;; https://github.com/maruks/.emacs.d/blob/master/smartparens-init.el
 (require 'smartparens-config)
 (define-key sp-keymap (kbd "C-<right>") 'forward-word)
 (define-key sp-keymap (kbd "C-<left>") 'backward-word)
@@ -26,6 +27,11 @@
 (define-key sp-keymap (kbd "C-M-<left>") 'sp-backward-slurp-sexp)
 (define-key sp-keymap (kbd "C-M-<right>") 'sp-backward-barf-sexp)
 ;; --------------------------------------------------------
+
+;; -------------------------------------------------------
+;; Undo / Redo was replaced with undo-tree.
+;; Check the keybindings from elpa/undo-tree-20131119.144/undo-tree.el
+;; -------------------------------------------------------
 
 ;; Enable helm mode (eg. advanced buffer switching etc.): https://github.com/emacs-helm/helm
 (helm-mode 1)
