@@ -17,7 +17,7 @@
 ;;(global-set-key [(control right)] 'forward-word)
 ;;(global-set-key [(control shift right)] 'sp-forward-slurp-sexp)
 ;; --------------------------------------------------------
-;; override the smartparens keys in smartparens config map
+;; Remap the smartparens keys in smartparens config keymap: C-<right> -> C-S-<right> etc.
 ;; https://github.com/maruks/.emacs.d/blob/master/smartparens-init.el
 (require 'smartparens-config)
 (define-key sp-keymap (kbd "C-<right>") 'forward-word)
