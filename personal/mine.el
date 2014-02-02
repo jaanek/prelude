@@ -312,6 +312,32 @@
              (require 'groovy-electric)
              (groovy-electric-mode)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;   ECB
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; replacement for built-in ecb-deactive, ecb-hide-ecb-windows and
+;;; ecb-show-ecb-windows functions
+;;; since they hide/deactive ecb but not restore the old windows for me
+(defun tmtxt/ecb-deactivate ()
+  "deactive ecb and then split emacs into 2 windows that contain 2 most recent buffers"
+  (interactive)
+  (ecb-deactivate)
+  (split-window-right)
+  (switch-to-next-buffer)
+  (other-window 1))
+(defun tmtxt/ecb-hide-ecb-windows ()
+  "hide ecb and then split emacs into 2 windows that contain 2 most recent buffers"
+  (interactive)
+  (ecb-hide-ecb-windows)
+  (split-window-right)
+  (switch-to-next-buffer)
+  (other-window 1))
+(defun tmtxt/ecb-show-ecb-windows ()
+  "show ecb windows and then delete all other windows except the current one"
+  (interactive)
+  (ecb-show-ecb-windows)
+  (delete-other-windows))
+
 ;;; activate ecb
 ;; http://truongtx.me/2013/03/10/ecb-emacs-code-browser/
 ;; ecb layouts: http://ecb.sourceforge.net/docs/Changing-the-ECB-layout.html
@@ -324,12 +350,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Keybindings for ECB
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; activate and deactivate ecb
+;;; activate and deactivate ecb & show/hide ecb window
 (global-set-key (kbd "C-x C-;") 'ecb-activate)
-(global-set-key (kbd "C-x C-'") 'ecb-deactivate)
-;;; show/hide ecb window
-(global-set-key (kbd "C-;") 'ecb-show-ecb-windows)
-(global-set-key (kbd "C-'") 'ecb-hide-ecb-windows)
+;;(global-set-key (kbd "C-x C-'") 'ecb-deactivate)
+;;(global-set-key (kbd "C-;") 'ecb-show-ecb-windows)
+;;(global-set-key (kbd "C-'") 'ecb-hide-ecb-windows)
+(global-set-key (kbd "C-x C-'") 'tmtxt/ecb-deactivate)
+(global-set-key (kbd "C-;") 'tmtxt/ecb-show-ecb-windows)
+(global-set-key (kbd "C-'") 'tmtxt/ecb-hide-ecb-windows)
 ;;; quick navigation between ecb windows
 (global-set-key (kbd "C-)") 'ecb-goto-window-edit1)
 (global-set-key (kbd "C-!") 'ecb-goto-window-directories)
