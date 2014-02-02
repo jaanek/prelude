@@ -311,3 +311,28 @@
           '(lambda ()
              (require 'groovy-electric)
              (groovy-electric-mode)))
+
+;;; activate ecb
+;; http://truongtx.me/2013/03/10/ecb-emacs-code-browser/
+;; ecb layouts: http://ecb.sourceforge.net/docs/Changing-the-ECB-layout.html
+(require 'ecb)
+(require 'ecb-autoloads)
+;; Show source files in directories buffer
+(setq ecb-show-sources-in-directories-buffer 'always)
+;; To keep a persistent compile window in ECB
+(setq ecb-compile-window-height 12)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Keybindings for ECB
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; activate and deactivate ecb
+(global-set-key (kbd "C-x C-;") 'ecb-activate)
+(global-set-key (kbd "C-x C-'") 'ecb-deactivate)
+;;; show/hide ecb window
+(global-set-key (kbd "C-;") 'ecb-show-ecb-windows)
+(global-set-key (kbd "C-'") 'ecb-hide-ecb-windows)
+;;; quick navigation between ecb windows
+(global-set-key (kbd "C-)") 'ecb-goto-window-edit1)
+(global-set-key (kbd "C-!") 'ecb-goto-window-directories)
+(global-set-key (kbd "C-@") 'ecb-goto-window-sources)
+(global-set-key (kbd "C-#") 'ecb-goto-window-methods)
+(global-set-key (kbd "C-$") 'ecb-goto-window-compilation)
