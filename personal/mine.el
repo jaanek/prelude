@@ -349,7 +349,7 @@
 ;; Show source files in directories buffer
 (setq ecb-show-sources-in-directories-buffer 'always)
 ;; To keep a persistent compile window in ECB
-(setq ecb-compile-window-height 12)
+;;(setq ecb-compile-window-height 12)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Keybindings for ECB
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -367,3 +367,40 @@
 (global-set-key (kbd "C-@") 'ecb-goto-window-sources)
 (global-set-key (kbd "C-#") 'ecb-goto-window-methods)
 (global-set-key (kbd "C-$") 'ecb-goto-window-compilation)
+
+
+;; Enable ggtags-mode for C/C++/Java modes:
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+              (ggtags-mode 1))))
+;; Go back to where we came
+(global-set-key "\M-\\" 'ggtags-prev-mark)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Code Browsing with Emacs, GLOBAL - http://www.wolinlabs.com/blog/emacs.global.speedbar.html
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Setup Global (gtags)
+;; First, tell Emacs where your gtags.el file. If do not know then find it by: find /usr/ -name "gtags.el"
+;;(setq load-path (cons "/usr/local/share/gtags/gtags.el" load-path))
+;; Next, tell Emacs to load gtags on start-up:
+;;(autoload 'ggtags-mode "gtags" "" t)
+;; The next part is preference. If you would like Emacs to go into gtags mode whenever you enter c mode, add the following section. (If instead you would rather control when gtags mode starts, omit this section and turn on gtags mode when you want it, via M-x gtags-mode)
+;;(add-hook 'c-mode-hook 
+;;   '(lambda () 
+;;      (gtags-mode t)
+;;))
+;; Additional, I like to have Speedbar start when I run Emacs. To do that, add the following section to init.el. (If you want to start Speedbar manually instead, omit this and use M-x speedbar
+;; Start speedbar automatically if we're using a window system like X, etc
+;;(when window-system 
+;;   (speedbar t))
+;;; NOW generate TAGS by issuing: 
+;; The simplest way to make a set of tags is to go to the top directory in your source tree and run
+;; gtags -v
+;; This will recursively tag all the files in the tree, including C, C++, Java, PHP, assembler, and YACC source files.
+
+
+;; ETags code completion - http://www.coverfire.com/archives/2004/06/24/emacs-source-code-navigation/
+;;(add-hook 'c-mode-common-hook
+;;        (lambda ()
+;;                (define-key c-mode-map [(ctrl tab)] 'complete-tag)))
