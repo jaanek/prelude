@@ -315,6 +315,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;   ECB
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Change ECB window sizes - http://ecb.sourceforge.net/docs/Changing-window-sizes.html
+;;;
 ;;; replacement for built-in ecb-deactive, ecb-hide-ecb-windows and
 ;;; ecb-show-ecb-windows functions
 ;;; since they hide/deactive ecb but not restore the old windows for me
@@ -340,9 +342,10 @@
 
 ;;; activate ecb
 ;; http://truongtx.me/2013/03/10/ecb-emacs-code-browser/
-;; ecb layouts: http://ecb.sourceforge.net/docs/Changing-the-ECB-layout.html
 (require 'ecb)
 (require 'ecb-autoloads)
+;; set the layout for ECB. ECB layouts: http://ecb.sourceforge.net/docs/Changing-the-ECB-layout.html
+(setq ecb-layout-name "leftright2")
 ;; Show source files in directories buffer
 (setq ecb-show-sources-in-directories-buffer 'always)
 ;; To keep a persistent compile window in ECB
