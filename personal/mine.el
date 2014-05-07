@@ -189,9 +189,16 @@
 ;; Never beep
 (setq ring-bell-function '(lambda () (interactive)))
 
+;; NB! Obsolete in Emacs starting from 24.4 (check your currently running emacs version with: emacs --version), do not comment it in back. It's not working correctly anyway in 24 anymore C-s is not working for example. Replaced by icomplete-mode. Instead try icomplete-mode for example instead of it. http://ergoemacs.org/emacs/emacs_name_completion.html
 ;; Superboost C-x b
-(iswitchb-mode t)
-(iswitchb-mode 1)
+;;(iswitchb-mode t)
+;;(iswitchb-mode 1)
+;; These following sentences take affect in Emacs 24.4, currently I'm running Emacs 24.3
+(icomplete-mode 1)
+(define-key icomplete-minibuffer-map [?\C-s]
+              'icomplete-forward-completions)
+(define-key icomplete-minibuffer-map [?\C-r]
+              'icomplete-backward-completions)
 
 ;; Stop forcing me to spell out "yes"
 (fset 'yes-or-no-p 'y-or-n-p)
