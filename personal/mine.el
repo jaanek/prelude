@@ -193,12 +193,14 @@
 ;; Superboost C-x b
 ;;(iswitchb-mode t)
 ;;(iswitchb-mode 1)
-;; These following sentences take affect in Emacs 24.4, currently I'm running Emacs 24.3
-;; (icomplete-mode 1)
+;; These following sentences take affect in Emacs 24.4, currently I'm running Emacs 24.3 - http://www.emacswiki.org/emacs/IcompleteMode
+;; (icomplete-mode 99)
 ;; (define-key icomplete-minibuffer-map [?\C-s]
 ;;               'icomplete-forward-completions)
 ;; (define-key icomplete-minibuffer-map [?\C-r]
 ;;               'icomplete-backward-completions)
+;; NB! This mode (ido-mode) is excellent (buffer switching clean and nice)! From: - http://ergoemacs.org/emacs/emacs_name_completion.html
+(ido-mode 1)
 
 ;; Stop forcing me to spell out "yes"
 (fset 'yes-or-no-p 'y-or-n-p)
