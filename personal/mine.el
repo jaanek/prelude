@@ -194,11 +194,11 @@
 ;;(iswitchb-mode t)
 ;;(iswitchb-mode 1)
 ;; These following sentences take affect in Emacs 24.4, currently I'm running Emacs 24.3
-(icomplete-mode 1)
-(define-key icomplete-minibuffer-map [?\C-s]
-              'icomplete-forward-completions)
-(define-key icomplete-minibuffer-map [?\C-r]
-              'icomplete-backward-completions)
+;; (icomplete-mode 1)
+;; (define-key icomplete-minibuffer-map [?\C-s]
+;;               'icomplete-forward-completions)
+;; (define-key icomplete-minibuffer-map [?\C-r]
+;;               'icomplete-backward-completions)
 
 ;; Stop forcing me to spell out "yes"
 (fset 'yes-or-no-p 'y-or-n-p)
