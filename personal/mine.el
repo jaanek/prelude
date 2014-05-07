@@ -226,11 +226,10 @@
 (global-set-key (kbd "C-x n") 'compilation-next-error)
 
 
-(global-set-key (kbd "M-s g") 'grep)
-(global-set-key (kbd "M-s M-g") 'rgrep)
-
-(global-set-key (kbd "M-s M-o") 'find-name-dired)
-(global-set-key (kbd "M-s M-p") 'find-grep)
+(global-set-key (kbd "M-G") 'grep)
+;;(global-set-key (kbd "M-s M-g") 'rgrep)
+(global-set-key (kbd "M-O") 'find-name-dired)
+(global-set-key (kbd "M-P") 'find-grep)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
