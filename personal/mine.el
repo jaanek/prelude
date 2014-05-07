@@ -229,6 +229,10 @@
 ;;(yas/initialize)
 ;;(yas/load-directory "~/.emacs.d/personal/yasnippet/0.6.1c/snippets")
 
+;; Enable yasnippet - prelude
+(prelude-require-package 'yasnippet)
+(yas-global-mode +1)
+
 
 ;; next compilation error
 (global-set-key (kbd "C-x c") 'mvn)
