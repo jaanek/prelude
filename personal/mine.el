@@ -416,3 +416,13 @@
 ;;(add-hook 'c-mode-common-hook
 ;;        (lambda ()
 ;;                (define-key c-mode-map [(ctrl tab)] 'complete-tag)))
+
+;;
+;; https://github.com/jaanek/jade-mode
+;; 
+(add-to-list 'load-path "~/.emacs.d/personal/jade-mode")
+(require 'sws-mode)
+(require 'jade-mode)    
+(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
+(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+;; if you want to add flymake support for jade files: then check this https://github.com/jaanek/jade-mode at the end are the instructions
